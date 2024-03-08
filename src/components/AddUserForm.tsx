@@ -6,7 +6,7 @@ import UploadPhotoInput from "./common/FormFields/UploadPhotoInput";
 import { useState } from "react";
 import EmailInput from "./common/FormFields/EmailInput";
 import PhoneInput from "./common/FormFields/PhoneInput";
-import { PostUserData, postUser } from "../utils/postUser";
+import { UserData, postUser } from "../utils/postUser";
 import SuccessAlert from "./common/SuccessAlert";
 import CustomRadioGroup from "./common/FormFields/RadioGroup";
 
@@ -28,7 +28,7 @@ export default function AddUserForm() {
     queryKey: ["positions"],
   });
 
-  const method = useForm<PostUserData>({
+  const method = useForm<UserData>({
     mode: "onSubmit",
   });
   const {

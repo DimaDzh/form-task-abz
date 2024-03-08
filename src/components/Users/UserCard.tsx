@@ -1,6 +1,3 @@
-import React from 'react'
-
-
 type UserData = {
   id: number;
   name: string;
@@ -12,8 +9,13 @@ type UserData = {
   photo: string;
 };
 
-
-export default function UserCard({email,name,phone,photo,position}: UserData) {
+export default function UserCard({
+  email,
+  name,
+  phone,
+  photo,
+  position,
+}: UserData) {
   return (
     <section className="flex flex-col items-center text-center p-5 bg-white overflow-hidden hover:scale-105 transition-all rounded-lg shadow-sm">
       <div className="size-12 mb-5 rounded-full">

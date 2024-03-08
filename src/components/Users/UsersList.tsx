@@ -1,9 +1,8 @@
 import { useInfiniteQuery } from "react-query";
-
 import UserCard, { UserData } from "./UserCard";
-
-import React from "react";
+import React, { FC } from "react";
 import Loader from "../common/Loader";
+import FailedAlert from "../common/FailedAlert";
 
 const PAGE_SIZE = 6;
 
@@ -17,7 +16,7 @@ const fetchUsers = async ({ pageParam = 1 }) => {
   return response.json();
 };
 
-const UsersList: React.FC = () => {
+const UsersList: FC = () => {
   const { data, fetchNextPage, hasNextPage, isLoading, isError } =
     useInfiniteQuery("users", fetchUsers, {
       getNextPageParam: (lastPage) => {
@@ -32,7 +31,7 @@ const UsersList: React.FC = () => {
   }
 
   if (isError) {
-    return <div>Error fetching users</div>;
+    return <FailedAlert />;
   }
 
   return (

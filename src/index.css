@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@layer components {
+  .btn-primary {
+    @apply py-1 px-6 bg-primary text-black hover:bg-primary-hover shadow truncate rounded-3xl transition-colors;
+  }
+  .btn-disabled {
+    @apply py-1 px-6 bg-disabled rounded-3xl transition-colors cursor-not-allowed;
+  }
+  .h1 {
+    @apply text-[40px] leading-10 font-normal ;
+  }
+  .p1 {
+    @apply text-base leading-[26px] font-normal ;
+  }
+}
